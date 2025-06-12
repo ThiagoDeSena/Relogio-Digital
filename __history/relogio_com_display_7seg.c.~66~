@@ -96,52 +96,23 @@ void trata_t0() {
                num4 = 0;
                num5++;
             }
-            if(num5 == 2 && num4 > 3){
+            if(num5 == 2 && num4 > 4){
                num4=0;
                num5=0;
             }
         }
     }
     
-    //Dezena hora
-    if(!input(pin_b2) && soltou){
+    if(!input(pin_b2) && soltou && num5 <2){
       num5++;
-      if(num5>2){
-         num5=0;
-      }
       soltou=0;
     }
     
-    //Unidade hora
     if(!input(pin_b3) && soltou){
       num4++;
       soltou=0;
-      if(num5==2 && num4>3){
-         num5=0;
-         num4=0;
-      }
-      
     }
-    
-    //Dezena Min
-    if(!input(pin_b4) && soltou){
-      num3++;
-      soltou=0;
-    }
-    
-    //Unidade Min
-    if(!input(pin_b5) && soltou){
-      num2++;
-      soltou=0;
-    }
-    
-    //Dezena Segundos
-    if(!input(pin_b6) && soltou){
-      num1++;
-      soltou=0;
-    }
-    
-    if(input(pin_b2)&&input(pin_b3)&&input(pin_b4)&&input(pin_b5)&&input(pin_b6)){
+    if(input(pin_b2)&&input(pin_b3)){
       soltou=1;
     }
 }

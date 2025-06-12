@@ -5,7 +5,7 @@
 #define led0 pin_b1
 
 int16 conta = -1;
-boolean estado_anterior = false,soltou=1;
+boolean estado_anterior = false;
 
 int digito[10] = {
     0b00111111, // Dígito 0
@@ -22,7 +22,7 @@ int digito[10] = {
 
 #int_timer0
 void trata_t0() {
-    static unsigned int32 tempo = 0,num5=0,num4=9, num = 0, num1 = 5, num2 = 9, num3 = 5; //num5,num4-Hora num3,num2-Min num1,num-Seg
+    static unsigned int32 tempo = 0,num5=0,num4=9, num = 0, num1 = 5, num2 = 9, num3 = 5; //num4 Hora
 
     // RESET
     if (input(pin_b0) == 0) {
@@ -96,53 +96,7 @@ void trata_t0() {
                num4 = 0;
                num5++;
             }
-            if(num5 == 2 && num4 > 3){
-               num4=0;
-               num5=0;
-            }
         }
-    }
-    
-    //Dezena hora
-    if(!input(pin_b2) && soltou){
-      num5++;
-      if(num5>2){
-         num5=0;
-      }
-      soltou=0;
-    }
-    
-    //Unidade hora
-    if(!input(pin_b3) && soltou){
-      num4++;
-      soltou=0;
-      if(num5==2 && num4>3){
-         num5=0;
-         num4=0;
-      }
-      
-    }
-    
-    //Dezena Min
-    if(!input(pin_b4) && soltou){
-      num3++;
-      soltou=0;
-    }
-    
-    //Unidade Min
-    if(!input(pin_b5) && soltou){
-      num2++;
-      soltou=0;
-    }
-    
-    //Dezena Segundos
-    if(!input(pin_b6) && soltou){
-      num1++;
-      soltou=0;
-    }
-    
-    if(input(pin_b2)&&input(pin_b3)&&input(pin_b4)&&input(pin_b5)&&input(pin_b6)){
-      soltou=1;
     }
 }
 

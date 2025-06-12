@@ -96,7 +96,7 @@ void trata_t0() {
                num4 = 0;
                num5++;
             }
-            if(num5 == 2 && num4 > 3){
+            if(num5 == 2 && num4 > 4){
                num4=0;
                num5=0;
             }
@@ -116,11 +116,6 @@ void trata_t0() {
     if(!input(pin_b3) && soltou){
       num4++;
       soltou=0;
-      if(num5==2 && num4>3){
-         num5=0;
-         num4=0;
-      }
-      
     }
     
     //Dezena Min

@@ -96,7 +96,7 @@ void trata_t0() {
                num4 = 0;
                num5++;
             }
-            if(num5 == 2 && num4 > 3){
+            if(num5 == 2 && num4 > 4){
                num4=0;
                num5=0;
             }

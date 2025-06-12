@@ -23,14 +23,17 @@
 015     @INTERRUPT_AREA
 016-017 conta
 018.0   estado_anterior
+018.1   soltou
 019-022 digito
 023-026 trata_t0.tempo
-027-02A trata_t0.num
-02B-02E trata_t0.num1
-02F-032 trata_t0.num2
-033-036 trata_t0.num3
-037     trata_t0.@SCRATCH1
-038     trata_t0.@SCRATCH2
+027-02A trata_t0.num5
+02B-02E trata_t0.num4
+02F-032 trata_t0.num
+033-036 trata_t0.num1
+037-03A trata_t0.num2
+03B-03E trata_t0.num3
+03F     trata_t0.@SCRATCH1
+040     trata_t0.@SCRATCH2
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
@@ -42,27 +45,27 @@ FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @READ_PACKED_MEMORY.P1
 FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @READ_PACKED_MEMORY.P4
-FF6-FF8 @READ_PROGRAM_MEMORY.P1
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000096  trata_t0
-000274  MAIN
-000274  @cinit1
-0002BA  @cinit2
+00043C  MAIN
+00043C  @cinit1
+000496  @cinit2
 
 Project Directory:
-    C:\Users\Thiago de sena\Documents\CCS C Projects\Display 7 seg\
+    C:\Users\Thiago\Documents\CCS C Projects\Relógio\Relogio-Digital\
 
 Project Files:
-    relogio_com_display_7seg.c                              [28-jul-24 12:07  CRC=0F514649]
-    ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    relogio_com_display_7seg.c                              [12-jun-25 14:48  CRC=CF29542E]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
-Source signature=52012205
+Source signature=11D92FEA
 
 Units:
     relogio_com_display_7seg (main)

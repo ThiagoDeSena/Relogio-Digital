@@ -1,7 +1,8 @@
-D G "__PCH__" 0 0 ""5.007""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""01-ago-24""
-D G "__TIME__" 0 0 ""20:02:53"" "Standard Header file for the PIC18F4550 device ////////////////"
+C L "MAIN" 0 11 1 "FUNCTION"
+D G "__PCH__" 0 158 ""5.007""
+D G "__DEVICE__" 0 158 "4550"
+D G "__DATE__" 0 158 ""12-jun-25""
+D G "__TIME__" 0 158 ""14:48:02"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 1 5 21 "FUNCTION"
 v L "value" 1 36 "int8" `54 
 f B "set_tris_a" 1 36 "void(int8 value)" `53 
@@ -900,31 +901,38 @@ d G "INT_EEPROM" 1 815 "0x00A010"
 d G "INT_OSCF" 1 816 "0x00A080"
 d G "INT_SPP" 1 817 "0x009D80"
 d G "INT_USB" 1 818 "0x00A020"
-D G "led0" 0 4 "pin_b1"
-V G "conta" 0 5 "int16" `634 
-V G "estado_anterior" 0 6 "int1" `635 
-V G "digito" 0 7 "int8[10]" `636 
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-C L "jump_to_irs" 0 8 1 "FUNCTION"
-F G "trata_t0" 0 21 "void()" `637 
-V L "tempo" 0 23 "int32" `638 
-V L "num" 0 23 "int32" `639 
-V L "num1" 0 23 "int32" `640 
-V L "num2" 0 23 "int32" `641 
-V L "num3" 0 23 "int32" `642 
-C L "trata_t0" 0 8 1 "FUNCTION"
-C L "trata_t0" 0 8 1 "FUNCTION"
-F G "MAIN" 0 88 "void()" `643 
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
+D G "led0" 0 5 "pin_b1"
+V G "conta" 0 7 "int16" `634 
+V G "estado_anterior" 0 8 "int1" `635 
+V G "soltou" 0 8 "int1" `636 
+V G "digito" 0 10 "int8[10]" `637 
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+C L "jump_to_irs" 0 11 1 "FUNCTION"
+F G "trata_t0" 0 24 "void()" `638 
+V L "tempo" 0 25 "int32" `639 
+V L "num5" 0 25 "int32" `640 
+V L "num4" 0 25 "int32" `641 
+V L "num" 0 25 "int32" `642 
+V L "num1" 0 25 "int32" `643 
+V L "num2" 0 25 "int32" `644 
+V L "num3" 0 25 "int32" `645 
+C L "trata_t0" 0 11 2 "FUNCTION"
+C L "trata_t0" 0 11 1 "FUNCTION"
+C L "trata_t0" 0 11 1 "FUNCTION"
+C L "trata_t0" 0 11 1 "FUNCTION"
+C L "trata_t0" 0 11 1 "FUNCTION"
+C L "trata_t0" 0 11 1 "FUNCTION"
+C L "trata_t0" 0 11 1 "FUNCTION"
+F G "MAIN" 0 149 "void()" `646 
+C L "MAIN" 0 11 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

@@ -4,8 +4,8 @@
 
 #define led0 pin_b1
 
-int16 conta = -1;
-boolean estado_anterior = false,soltou=1;
+int16 conta = 0;
+boolean estado_anterior = false;
 
 int digito[10] = {
     0b00111111, // Dígito 0
@@ -22,7 +22,7 @@ int digito[10] = {
 
 #int_timer0
 void trata_t0() {
-    static unsigned int32 tempo = 0,num5=0,num4=9, num = 0, num1 = 5, num2 = 9, num3 = 5; //num5,num4-Hora num3,num2-Min num1,num-Seg
+    static unsigned int32 tempo = 0,num0=0, num = 0, num1 = 5, num2 = 9, num3 = 5; //num0 Hora
 
     // RESET
     if (input(pin_b0) == 0) {
@@ -30,8 +30,6 @@ void trata_t0() {
         num1 = 0;
         num2 = 0;
         num3 = 0;
-        num4=0;
-        num5=0;
     }
 
     // PAUSE
@@ -42,30 +40,26 @@ void trata_t0() {
     SET_TIMER0(131 + get_timer0());
 
     conta++;
-    if (conta > 5) conta = 0;
+    if (conta > 4) conta = 1;
 
     switch (conta) {
         case 0:
-            OUTPUT_D(digito[num5]);
-            OUTPUT_A(0b11111110);
-            break;
-        case 1:
-            OUTPUT_D(digito[num4]);
+            OUTPUT_D(digito[num0]);
             OUTPUT_A(0b11111101);
             break;
-        case 2:
+        case 1:
             OUTPUT_D(digito[num3]);
             OUTPUT_A(0b11111011);
             break;
-        case 3:
+        case 2:
             OUTPUT_D(digito[num2]);
             OUTPUT_A(0b11110111);
             break;
-        case 4:
+        case 3:
             OUTPUT_D(digito[num1]);
             OUTPUT_A(0b11101111);
             break;
-        case 5:
+        case 4:
             OUTPUT_D(digito[num]);
             OUTPUT_A(0b11011111);
             break;
@@ -90,59 +84,9 @@ void trata_t0() {
             }
             if (num3 > 5) {
                 num3 = 0;
-                num4++;
-            }
-            if(num4 > 9){
-               num4 = 0;
-               num5++;
-            }
-            if(num5 == 2 && num4 > 3){
-               num4=0;
-               num5=0;
+                num0++;
             }
         }
-    }
-    
-    //Dezena hora
-    if(!input(pin_b2) && soltou){
-      num5++;
-      if(num5>2){
-         num5=0;
-      }
-      soltou=0;
-    }
-    
-    //Unidade hora
-    if(!input(pin_b3) && soltou){
-      num4++;
-      soltou=0;
-      if(num5==2 && num4>3){
-         num5=0;
-         num4=0;
-      }
-      
-    }
-    
-    //Dezena Min
-    if(!input(pin_b4) && soltou){
-      num3++;
-      soltou=0;
-    }
-    
-    //Unidade Min
-    if(!input(pin_b5) && soltou){
-      num2++;
-      soltou=0;
-    }
-    
-    //Dezena Segundos
-    if(!input(pin_b6) && soltou){
-      num1++;
-      soltou=0;
-    }
-    
-    if(input(pin_b2)&&input(pin_b3)&&input(pin_b4)&&input(pin_b5)&&input(pin_b6)){
-      soltou=1;
     }
 }
 

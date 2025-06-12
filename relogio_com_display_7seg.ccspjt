@@ -12,8 +12,14 @@ Type=4
 [mru-list]
 1=relogio_com_display_7seg.c
 [Opened Files]
-1=relogio_com_display_7seg.c
-2=
+1=..\..\LM35 Monitor Serial\lm35_monitor_serial.c
+2=..\..\PicGenius LM35\lm35_pigGenius.c
+3=..\..\Elevador Rôbo SCADA\Programa 20 - 1\programa20_1.c
+4=..\..\Monitor Serial\monitor_serial.c
+5=..\..\Elevador Rôbo SCADA\Elevador Com Serial\elevador_com_serial.c
+6=..\..\Controle PID\controle_PID.c
+7=relogio_com_display_7seg.c
+8=
 [Units]
 Count=1
 1=relogio_com_display_7seg (main)
